@@ -1,4 +1,4 @@
-# Tp create public hosted zone and subdomain zone for that 
+# Tp create public hosted zone and subdomain zone for that
 resource "aws_route53_zone" "kk-main-domain" {
   name = "kk-shop-us-1.com"
 }
