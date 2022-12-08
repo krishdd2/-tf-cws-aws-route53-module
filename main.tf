@@ -11,3 +11,6 @@ terraform {
 provider "aws" {
   region              = var.region
 }
+module "zones" {
+  source = "./modules/zones"
+ }
