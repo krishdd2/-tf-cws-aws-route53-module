@@ -12,18 +12,18 @@ resource "aws_route53_zone" "east-sub-domain" {
 }
 
 # To crate A record for kk-main-domain-2 zone
-resource "aws_route53_record" "www" {
+resource "aws_route53_record" "http" {
   zone_id = aws_route53_zone.kk-main-domain-2.zone_id
   name    = "www.kk-shop-2-us.com"
   type    = "A"
   ttl     = 300
-  records = ["10.0.0.100"]
+  records = ["10.0.0.200"]
 }
 # To crate A record for east.kk-shop-2-us.com zone
-resource "aws_route53_record" "www" {
-  zone_id = aws_route53_zone.east.kk-shop-2-us.com.zone_id
+resource "aws_route53_record" "newyork" {
+  zone_id = aws_route53_zone.east-sub-domain.zone_id
   name    = "newyork.east.kk-shop-2-us.com"
   type    = "A"
   ttl     = 300
-  records = ["10.0.0.101"]
+  records = ["10.0.0.201"]
 }
