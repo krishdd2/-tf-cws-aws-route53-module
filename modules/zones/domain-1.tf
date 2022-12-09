@@ -10,7 +10,7 @@ resource "aws_route53_zone" "west-sub-domain" {
     Environment = "dev"
   }
 }
-# To crate A record for kk-usa.com zone
+# To crate A record for kk-shop-us-1.com zone
 resource "aws_route53_record" "www" {
   zone_id = aws_route53_zone.kk-main-domain.zone_id
   name    = "www.kk-shop-us-1.com"
