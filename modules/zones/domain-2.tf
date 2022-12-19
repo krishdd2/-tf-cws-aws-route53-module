@@ -27,3 +27,15 @@ resource "aws_route53_record" "newyork" {
   ttl     = 300
   records = ["10.0.0.201"]
 }
+
+# To crate A record for east.kk-shop-2-us.com zone
+resource "aws_route53_record" "chicago" {
+  zone_id = aws_route53_zone.east-sub-domain.zone_id
+  name    = "chicago.east.kk-shop-2-us.com"
+  type    = "A"
+  ttl     = 300
+  records = ["10.0.0.301"]
+}
+
+
+
